@@ -43,14 +43,12 @@ if ($success === true)
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $question = $_POST['question'];
-    $amount = $_POST['amount'];
-
+    $amount = $_POST['amount']/100;
 
     $razorpay_order_id = $_SESSION['razorpay_order_id'];
     $razorpay_payment_id = $_POST['razorpay_payment_id'];
     $email = $_POST['email'];
-    $price = $_POST['amount'];
-    $sql = "INSERT INTO register (firstname, middlename, lastname, email, phone, gender, question, order_id, razorpay_payment_id, amount,`status`) VALUES ('$firstname','$middlename','$lastname','$email','$phone','gender','$question','$razorpay_order_id','$razorpay_payment_id','$amount','success')";
+    $sql = "INSERT INTO register (firstname, middlename, lastname, email, phone, gender, question, order_id, razorpay_payment_id, amount,`status`) VALUES ('$firstname','$middlename','$lastname','$email','$phone','$gender','$question','$razorpay_order_id','$razorpay_payment_id','$amount','success')";
     // echo $sql;
     if(mysqli_query($conn, $sql)){
         // echo "You have Registered Successfully";

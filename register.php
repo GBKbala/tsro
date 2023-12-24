@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
         }else{
             $amount= 60;
         }
-               
+
         $api = new Api($keyId, $keySecret);
         $orderData = [
             // 'receipt'         => 3456,
@@ -47,16 +47,16 @@ if(isset($_POST['submit'])){
             "amount"            => $amount,
             "name"              => $firstname .' '. $middlename.' '.$lastname,
             "description"       => "Registration Fee for Marathon",
-            "image"             => "https://s29.postimg.org/r6dj1g85z/daft_punk.jpg",
+            "image"             => "https://razorpay.com/assets/razorpay-glyph.svg",
             "prefill"           => [
             "name"              => $firstname.' '. $middlename.' '.$lastname,
             "email"             => $email,
             "contact"           => $phone,
             ],
-            "notes"             => [
-            "address"           => "Hello World",
-            "merchant_order_id" => "12312321",
-            ],
+            // "notes"             => [
+            // "address"           => "Hello World",
+            // "merchant_order_id" => "12312321",
+            // ],
             "theme"             => [
             "color"             => "#F37254"
             ],
