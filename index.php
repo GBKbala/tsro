@@ -1,10 +1,19 @@
+<?php
+session_start();
+
+if (isset($_SESSION['registration_status'])) {
+    $status = $_SESSION['registration_status'];
+    $messege = $_SESSION['messege'];
+   
+    echo '<script>alert("'.$messege.'");</script>';
+
+    unset($_SESSION['registration_status']);
+    unset($_SESSION['messege']);
+}
+?>
+
 <!DOCTYPE html>
-
 <html lang="en">
-
-
-<!-- Mirrored from winsfolio.net/html/builty/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Dec 2023 06:53:39 GMT -->
-
 <head>
 
     <!-- Meta Options -->
@@ -1163,40 +1172,40 @@
                         <div class="c-form-2">
                             <h3>Start Consulting</h3>
                             <div class="parallax" style="background-image: url(assets/images/pattren.png);"></div>
-                            <form>
+                            <form action="register.php" id="register" method="POST" class="">
                                 <div class="row g-0">
                                     <label class="text-white">First Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="exampleInputText1" placeholder="First Name">
+                                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" required>
                                 </div>
                                 <div class="row g-0">
                                     <label class="text-white">Middle Name</label>
-                                    <input type="text" class="form-control" id="exampleInputText2" placeholder="Middle Name">
+                                    <input type="text" class="form-control" id="middlename" name="middlename" placeholder="Middle Name">
                                 </div>
                                 <div class="row g-0">
                                     <label class="text-white">Last Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="exampleInputText3" placeholder="Last Name">
+                                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" required>
                                 </div>
                                 <div class="row g-0">
                                     <label class="text-white">Email <span class="text-danger">*</span></label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email Address">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
                                 </div>
                                 <div class="row g-0">
                                     <label class="text-white">Phone No. <span class="text-danger">*</span></label>
-                                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Phone No">
+                                    <input type="number" class="form-control" id="phone" name="phone" placeholder="Phone No" required>
                                 </div>
                                 <div class="row g-0">
                                     <label class="text-white">Gender <span class="text-danger">*</span></label>
-                                    <select id="inputState-21" class="form-control">
-                                    <option selected></option>
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                    <option>Non-binary</option>
+                                    <select id="gender" name="gender" class="form-select" required>
+                                    <option value="" aselected>-select-</option>
+                                    <option value="male"></var>Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="non-binary">Non-binary</option>
                                     </select>
                                 </div>
                                 <div class="row g-0">
-                                    <textarea placeholder="Question / Message?"></textarea>
+                                    <textarea id="question" name="question" placeholder="Question / Message?"></textarea>
                                 </div>
-                                <button type="submit" class="theme-btn">Submit Now <i class="fa-solid fa-angles-right"></i></button>
+                                <button type="submit" class="theme-btn" name="submit">Submit Now <i class="fa-solid fa-angles-right"></i></button>
                             </form>
                         </div>
                     </div>
@@ -1243,8 +1252,26 @@
 
     <script src="assets/js/custom.js"></script>
 </body>
-
-
-<!-- Mirrored from winsfolio.net/html/builty/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Dec 2023 06:54:35 GMT -->
-
 </html>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+    // $(document).ready(function(){
+    //     $('#register').submit(function(e){
+    //         e.preventDefault();
+    //         var form = $('#register')[0];
+    //         // var formData = new FormData(form);
+    //         var formData = new FormData($('#register')[0]);
+
+    //         $.ajax({
+    //             url:'register.php',
+    //             method:"POST",
+    //             data:formData,
+    //             processData:false,
+    //             contentType:false,
+    //             success:function(data){
+
+    //             }
+    //         });
+    //     });
+    // });
+</script>
