@@ -32,36 +32,42 @@ if (empty($_POST['razorpay_payment_id']) === false)
         $success = false;
         $error = 'Razorpay Error : ' . $e->getMessage();
     }
-}
 
-if ($success === true)
-{
-    $firstname = $_POST['firstname'];
-    $middlename = $_POST['middlename'];
-    $lastname = $_POST['lastname'];
-    $gender = $_POST['gender'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $question = $_POST['question'];
-    $amount = $_POST['amount']/100;
+    if ($success === true)
+    {
+        $firstname = $_POST['firstname'];
+        $middlename = $_POST['middlename'];
+        $lastname = $_POST['lastname'];
+        $gender = $_POST['gender'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $question = $_POST['question'];
+        $amount = $_POST['amount']/100;
 
-    $razorpay_order_id = $_SESSION['razorpay_order_id'];
-    $razorpay_payment_id = $_POST['razorpay_payment_id'];
-    $email = $_POST['email'];
-    $sql = "INSERT INTO register (firstname, middlename, lastname, email, phone, gender, question, order_id, razorpay_payment_id, amount,`status`) VALUES ('$firstname','$middlename','$lastname','$email','$phone','$gender','$question','$razorpay_order_id','$razorpay_payment_id','$amount','success')";
-    // echo $sql;
-    if(mysqli_query($conn, $sql)){
-        // echo "You have Registered Successfully";
-        $_SESSION['registration_status'] = 'success';
-        $_SESSION['messege'] = 'Your payment was successful.Payment ID: '.$razorpay_payment_id.'';
+        $razorpay_order_id = $_SESSION['razorpay_order_id'];
+        $razorpay_payment_id = $_POST['razorpay_payment_id'];
+        $email = $_POST['email'];
+        $sql = "INSERT INTO register (firstname, middlename, lastname, email, phone, gender, question, order_id, razorpay_payment_id, amount,`status`) VALUES ('$firstname','$middlename','$lastname','$email','$phone','$gender','$question','$razorpay_order_id','$razorpay_payment_id','$amount','success')";
+        // echo $sql;
+        if(mysqli_query($conn, $sql)){
+            // echo "You have Registered Successfully";
+            $_SESSION['registration_status'] = 'success';
+            $_SESSION['messege'] = 'Your payment was successful.Payment ID: '.$razorpay_payment_id.'';
+            header("Location: index.php");
+            exit();
+        }    
+    }
+    else
+    {
+        $_SESSION['registration_status'] = 'error';
+        $_SESSION['messege'] = 'Your payment failed';
         header("Location: index.php");
         exit();
-    }    
-}
-else
+    }
+}else
 {
     $_SESSION['registration_status'] = 'error';
-    $_SESSION['messege'] = 'Your payment failed';
+    $_SESSION['messege'] = 'Something Went Wrong.';
     header("Location: index.php");
     exit();
 }

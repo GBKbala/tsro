@@ -9,6 +9,8 @@ if (isset($_SESSION['registration_status'])) {
 
     unset($_SESSION['registration_status']);
     unset($_SESSION['messege']);
+    unset($_SESSION['razorpay_order_id']);
+    unset($_SESSION['razor_payment_id']);
 }
 ?>
 
