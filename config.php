@@ -17,8 +17,11 @@ if ($env == "local"){
         die("Couldn't connect to server".mysqli_connect_error);
     }
 
-    $keyId="rzp_test_HulsP8GtZeHDzj";
-    $keySecret = "lxiKjEkzRNWSjdsf83Efzr3S";
+    // $keyId="rzp_test_HulsP8GtZeHDzj";
+    // $keySecret = "lxiKjEkzRNWSjdsf83Efzr3S";
+
+    $keyId="rzp_live_IcLoc7IU7pnMOh";
+    $keySecret = "cTLAFRRQe4AfpySlPxBt9YXb";
 
 }else if($env == "live"){
 
@@ -34,8 +37,8 @@ if ($env == "local"){
         die("Couldn't connect to server".mysqli_connect_error);
     }
     
-    $keyId="rzp_test_HulsP8GtZeHDzj";
-    $keySecret = "lxiKjEkzRNWSjdsf83Efzr3S";
+    $keyId="rzp_live_IcLoc7IU7pnMOh";
+    $keySecret = "cTLAFRRQe4AfpySlPxBt9YXb";
 }
 
 

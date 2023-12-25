@@ -5,7 +5,7 @@ require 'vendor/razorpay/razorpay/Razorpay.php';
 use Razorpay\Api\Api;
 
 if(isset($_POST['submit'])){
-    if(!empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['email']) && !empty($_POST['phone']) && !empty($_POST['gender']) && $_POST['whatsappNo'] && $_POST['nationality'] && $_POST['state'] && $_POST['city'] && $_POST['address'] && $_POST['pincode'] && $_POST['category'] && $_POST['dob']){
+    if(!empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['email']) && !empty($_POST['phone']) && !empty($_POST['gender']) && $_POST['whatsappNo'] && $_POST['state'] && $_POST['city'] && $_POST['address'] && $_POST['pincode'] && $_POST['category'] && $_POST['dob']){
 
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
@@ -13,7 +13,6 @@ if(isset($_POST['submit'])){
         $email = $_POST['email'];
         $phone = $_POST['phone'];
         $whatsappNo = $_POST['whatsappNo'];
-        $nationality = $_POST['nationality'];
         $state = $_POST['state'];
         $city = $_POST['city'];
         $address = $_POST['address'];
@@ -107,7 +106,6 @@ if(isset($_POST['submit'])){
   <input type="hidden" name="email" id="email" value="<?php echo $email; ?>">
   <input type="hidden" name="amount" id="amount" value="<?php echo $amount; ?>">
   <input type="hidden" name="whatsappNo" id="whatsappNo" value="<?php echo $whatsappNo; ?>">
-  <input type="hidden" name="nationality" id="nationality" value="<?php echo $nationality; ?>">
   <input type="hidden" name="state" id="state" value="<?php echo $state; ?>">
   <input type="hidden" name="city" id="city" value="<?php echo $city; ?>">
   <input type="hidden" name="category" id="category" value="<?php echo $category; ?>">

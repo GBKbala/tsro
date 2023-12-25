@@ -1201,6 +1201,15 @@ if (isset($_SESSION['registration_status'])) {
                                     <input type="number" class="form-control" id="whatsappNo" name="whatsappNo" placeholder="Whatsapp No" required>
                                 </div>
                                 <div class="row g-0">
+                                    <label class="text-white">Date of Birth <span class="text-danger">*</span></label>
+                                    <div class="input-group date" data-provide="datepicker">
+                                        <input type="date" class="form-control" name="dob" id="dob" required>
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row g-0">
                                     <label class="text-white">Gender <span class="text-danger">*</span></label>
                                     <select id="gender" name="gender" class="form-select" required>
                                     <option value="" selected>-select-</option>
@@ -1212,14 +1221,14 @@ if (isset($_SESSION['registration_status'])) {
                                 <!-- <div class="row g-0">
                                     <textarea id="question" name="question" placeholder="Question / Message?"></textarea>
                                 </div> -->
-                                <div class="row g-0">
+                                <!-- <div class="row g-0">
                                     <label class="text-white">Nationality <span class="text-danger">*</span></label>
                                     <select id="nationality" name="nationality" class="form-select" required>
                                     <option selected></option>
                                     <option value="Indian national">Indian national</option>
                                     <option value="Foeign national">Foreign national</option>
                                     </select>
-                                </div>
+                                </div> -->
                                 <div class="row g-0">
                                     <label class="text-white">State <span class="text-danger">*</span></label>
                                     <select id="state" name="state" class="form-select" required>
@@ -1240,20 +1249,13 @@ if (isset($_SESSION['registration_status'])) {
                                 </div>
                                 <h5 class="text-white pb-2">Category & Other information</h5>
                                 <div class="row g-0">
-                                    <label class="text-white">Select Catogory <span class="text-danger">*</span></label>
-                                    <select id="category" name="category" class="form-select" required>
-                                    <option value="" selected></option>
-                                    <option value="5">5 km</option>
-                                    <option value="10">10 km</option>
-                                    </select>
-                                </div>
-                                <div class="row g-0">
-                                    <label class="text-white">Date of Birth <span class="text-danger">*</span></label>
-                                    <div class="input-group date" data-provide="datepicker">
-                                        <input type="date" class="form-control" name="dob" id="dob" required>
-                                        <div class="input-group-addon">
-                                            <span class="glyphicon glyphicon-th"></span>
-                                        </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="category"  value="5">
+                                        <label class="form-check-label text-white" for="inlineRadio1">5 Km</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="category" value="10">
+                                        <label class="form-check-label text-white" for="inlineRadio2">10 Km</label>
                                     </div>
                                 </div>
                                 <button type="submit" class="theme-btn" name="submit">Submit Now <i class="fa-solid fa-angles-right"></i></button>
