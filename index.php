@@ -1175,14 +1175,15 @@ if (isset($_SESSION['registration_status'])) {
                             <h3>Start Consulting</h3>
                             <div class="parallax" style="background-image: url(assets/images/pattren.png);"></div>
                             <form action="register.php" id="register" method="POST" class="">
+                                <h5 class="text-white pb-2">Contact Information</h5>
                                 <div class="row g-0">
                                     <label class="text-white">First Name <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" required>
                                 </div>
-                                <div class="row g-0">
+                                <!-- <div class="row g-0">
                                     <label class="text-white">Middle Name</label>
                                     <input type="text" class="form-control" id="middlename" name="middlename" placeholder="Middle Name">
-                                </div>
+                                </div> -->
                                 <div class="row g-0">
                                     <label class="text-white">Last Name <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" required>
@@ -1196,16 +1197,64 @@ if (isset($_SESSION['registration_status'])) {
                                     <input type="number" class="form-control" id="phone" name="phone" placeholder="Phone No" required>
                                 </div>
                                 <div class="row g-0">
+                                    <label class="text-white">Whatsapp No. <span class="text-danger">*</span></label>
+                                    <input type="number" class="form-control" id="whatsappNo" name="whatsappNo" placeholder="Whatsapp No" required>
+                                </div>
+                                <div class="row g-0">
                                     <label class="text-white">Gender <span class="text-danger">*</span></label>
                                     <select id="gender" name="gender" class="form-select" required>
-                                    <option value="" aselected>-select-</option>
+                                    <option value="" selected>-select-</option>
                                     <option value="male"></var>Male</option>
                                     <option value="female">Female</option>
                                     <option value="non-binary">Non-binary</option>
                                     </select>
                                 </div>
-                                <div class="row g-0">
+                                <!-- <div class="row g-0">
                                     <textarea id="question" name="question" placeholder="Question / Message?"></textarea>
+                                </div> -->
+                                <div class="row g-0">
+                                    <label class="text-white">Nationality <span class="text-danger">*</span></label>
+                                    <select id="nationality" name="nationality" class="form-select" required>
+                                    <option selected></option>
+                                    <option value="Indian national">Indian national</option>
+                                    <option value="Foeign national">Foreign national</option>
+                                    </select>
+                                </div>
+                                <div class="row g-0">
+                                    <label class="text-white">State <span class="text-danger">*</span></label>
+                                    <select id="state" name="state" class="form-select" required>
+                                        <div class="overflow-auto"></div>
+                                    </select>
+                                </div>
+                                <div class="row g-0">
+                                    <label class="text-white">City <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="city" name="city" placeholder="Enter Your City" required>
+                                </div>
+                                <div class="row g-0">
+                                    <label class="text-white">Street Address <span class="text-danger">*</span></label>
+                                    <textarea placeholder="Enter Your Address" name="address" id="address" required></textarea>
+                                </div>
+                                <div class="row g-0">
+                                    <label class="text-white">Pincode <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Enter Your Pincode" required>
+                                </div>
+                                <h5 class="text-white pb-2">Category & Other information</h5>
+                                <div class="row g-0">
+                                    <label class="text-white">Select Catogory <span class="text-danger">*</span></label>
+                                    <select id="category" name="category" class="form-select" required>
+                                    <option value="" selected></option>
+                                    <option value="5">5 km</option>
+                                    <option value="10">10 km</option>
+                                    </select>
+                                </div>
+                                <div class="row g-0">
+                                    <label class="text-white">Date of Birth <span class="text-danger">*</span></label>
+                                    <div class="input-group date" data-provide="datepicker">
+                                        <input type="date" class="form-control" name="dob" id="dob" required>
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <button type="submit" class="theme-btn" name="submit">Submit Now <i class="fa-solid fa-angles-right"></i></button>
                             </form>

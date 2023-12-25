@@ -36,18 +36,24 @@ if (empty($_POST['razorpay_payment_id']) === false)
     if ($success === true)
     {
         $firstname = $_POST['firstname'];
-        $middlename = $_POST['middlename'];
         $lastname = $_POST['lastname'];
         $gender = $_POST['gender'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
-        $question = $_POST['question'];
         $amount = $_POST['amount']/100;
-
+        $whatsappNo = $_POST['whatsappNo'];
+        $nationality = $_POST['nationality'];
+        $state = $_POST['state'];
+        $city = $_POST['city'];
+        $address = $_POST['address'];
+        $pincode = $_POST['pincode'];
+        $category = $_POST['category'];
+        $dob = $_POST['dob'];
+        
         $razorpay_order_id = $_SESSION['razorpay_order_id'];
         $razorpay_payment_id = $_POST['razorpay_payment_id'];
         $email = $_POST['email'];
-        $sql = "INSERT INTO register (firstname, middlename, lastname, email, phone, gender, question, order_id, razorpay_payment_id, amount,`status`) VALUES ('$firstname','$middlename','$lastname','$email','$phone','$gender','$question','$razorpay_order_id','$razorpay_payment_id','$amount','success')";
+        $sql = "INSERT INTO register (firstname, lastname, email, phone ,whatsapp_number , dob,  gender, nationality, state, city, address, pincode, category, order_id, razorpay_payment_id, amount,`status`) VALUES ('$firstname','$lastname','$email','$phone','$whatsappNo','$dob','$gender','$nationality','$state','$city','$address','$pincode','$category','$razorpay_order_id','$razorpay_payment_id','$amount','success')";
         // echo $sql;
         if(mysqli_query($conn, $sql)){
             // echo "You have Registered Successfully";
